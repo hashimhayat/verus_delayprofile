@@ -75,9 +75,9 @@ void endpoints(){
 
 	if (MAX > 0 && MIN > 0){
 
-		printf("LOWEST VAL:  %f\n", MIN);
-		printf("MAX VAL:  %f\n", MAX);
-		printf("HIGH AVG VAL:  %f\n", avg);
+		// printf("LOWEST VAL:  %f\n", MIN);
+		// printf("MAX VAL:  %f\n", MAX);
+		// printf("HIGH AVG VAL:  %f\n", avg);
 
 		Smothest.erase (Smothest.begin(),Smothest.end());
 		Smothest.push_back(MIN);
@@ -112,11 +112,9 @@ void groupAverage (){
 
 	for (int i = 0; i < sc; i++){
 
-		printf("start = %d end = %d ", str, end);
 		for (int w = str; w < end; w++){
 			avg += SmoothArr[w];
 		}
-		printf("avg = %f \n", avg/sc);
 		Smothest.push_back(avg / sc);
 		avg = 0;
 
@@ -347,9 +345,7 @@ int updateDelayProfile(double newDelay, int w) {
 		} else {
 			return -1;
 		} 			
-	}
-
-	printf("Updated %f to %f\n", oldDelay, newDelay);		
+	}	
 	return 0;
 }
 
@@ -402,7 +398,6 @@ double getWindow(double d) {
 	if (Exp)
 		return (log(d/coef))/power; 
 
-	// Needs Fix
 	if (Smooth){
 		for (w = 0; w < SmoothArr.size(); w++){
 			if (SmoothArr.at(w) == d && i < 10){
@@ -448,7 +443,7 @@ int main(){
     ofstream curve;
     curve.open ("curve.csv");
 
-	int arrSize = 1000;
+	int arrSize = 10000;
 	double wList[arrSize];
 	double delay;
 	int skip, rwind, idx = 0;
@@ -518,9 +513,8 @@ int main(){
 	createSplineInterpolation();
 
 	double dly = getDelay(500);
-	printf("delay at 500: %f\n", dly);
+	int wid = getWindow(dly);
+	printf("delay at window (%d): %f\n",wid,dly);
 
 	return 0;
 }
-
-
