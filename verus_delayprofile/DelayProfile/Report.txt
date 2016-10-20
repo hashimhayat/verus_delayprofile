@@ -1,0 +1,8 @@
+
+Delay Profile - Verus
+
+I will discuss the approch used to find and maintain a monotonically increasing curve/straight line for random delay values.
+
+Research Outcomes:
+
+I tried various methods, both mathematical and algorithmic  

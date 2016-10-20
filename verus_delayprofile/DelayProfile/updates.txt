@@ -1,0 +1,14 @@
+Updates Required:
+
+1/ Smooth First n Values: Init delays should be low: Can use next values
+
+2/ Update delay profile for large incoming values (outliers)
+
+3/ Test in real time situation: Update a[i] SmotthArr and Curve Simultaniously
+
+(*) 4/ Compute Curve in O[i] 
+
+5/ find delay/window for values where the curve does not start
+
+(IMP) 6/ There are empty values in the wList, put an estimated value in the smoothArray for proper updation.  
+
