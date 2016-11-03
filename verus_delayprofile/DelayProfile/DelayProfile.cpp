@@ -19,18 +19,18 @@ double MIN = 0;
 double MAX = 0;
 
 int max_element_smooth (){
+	
 	int max = -1;
-
 	for (int i = 0; i < SmoothArr.size(); i++){
 		if (SmoothArr.at(i) > max)
 			max = SmoothArr.at(i);
 	}
-		return max;
+	return max;
 }
 
 double f_max_element (){
+	
 	double max = -1;
-
 	for (int i = 0; i < Smothest.size(); i++){
 		if (Smothest.at(i) > max)
 			max = Smothest.at(i);
@@ -40,9 +40,8 @@ double f_max_element (){
 }
 
 double f_min_element(){
-
+	
 	double min_e = SmoothArr.at(0);
-
 	int maxIdx = (int) SmoothArr.size()*(0.25);
 
 	for (int i = 1; i < maxIdx; i++){
@@ -50,7 +49,7 @@ double f_min_element(){
 			min_e = SmoothArr.at(i);
 		}
 	}
-		return min_e;		
+	return min_e;		
 }
 
 void endpoints(){
@@ -75,10 +74,6 @@ void endpoints(){
 
 	if (MAX > 0 && MIN > 0){
 
-		// printf("LOWEST VAL:  %f\n", MIN);
-		// printf("MAX VAL:  %f\n", MAX);
-		// printf("HIGH AVG VAL:  %f\n", avg);
-
 		Smothest.erase (Smothest.begin(),Smothest.end());
 		Smothest.push_back(MIN);
 		Smothest.push_back(MAX);
@@ -90,9 +85,9 @@ void endpoints(){
 
 		for (int i = 0; i < SmoothArr.size(); i++){
 			if (i == 0)
-			Smothest.push_back(first);
-		else
-			Smothest.push_back(Smothest.at(i-1)+value);
+				Smothest.push_back(first);
+			else
+				Smothest.push_back(Smothest.at(i-1)+value);
 		}
 
 		exponentialCurveFitting();
