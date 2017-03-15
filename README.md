@@ -3,7 +3,7 @@ Verus is an end-to-end congestion control protocol that uses delay measurements 
 
 Delay profile is the implementation of an approach to find and maintain a monotonically increasing curve for window/delay value pairs.
 
-##Compiling with g++ for Testing Purposes
+## Compiling with g++ for Testing Purposes
 g++ -fpermissive -std=c++11 DelayProfile.cpp PerlinNoise.cpp
 
 
